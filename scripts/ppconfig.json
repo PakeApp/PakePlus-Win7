@@ -166,10 +166,10 @@
         "safeArea": "all"
     },
     "desktop": {
-        "name": "PakePlus2",
-        "showName": "xiaoshen",
+        "name": "littlecountry",
+        "showName": "小人国奇遇记",
         "version": "0.0.2",
-        "id": "com.xiaoshen.app",
+        "id": "com.littlecountry.pakeplus.desktop",
         "desc": "",
         "webUrl": "https://juejin.cn/",
         "iconPath": "../app-icon.png",
@@ -177,7 +177,7 @@
         "tempPath": "./processed-image.png",
         "icnsPath": "../src-tauri/icons/icon.icns",
         "pubBody": "",
-        "isHtml": false,
+        "isHtml": true,
         "single": true,
         "state": true,
         "injectJq": false,
