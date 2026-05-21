@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
     <head>
         <meta charset="UTF-8" />
@@ -336,7 +336,9 @@
                 background: linear-gradient(135deg, #ffe4ec 0%, #fff0f5 100%);
                 border-radius: 10px;
                 margin-bottom: 8px;
-                transition: background 0.2s ease, box-shadow 0.2s ease,
+                transition:
+                    background 0.2s ease,
+                    box-shadow 0.2s ease,
                     transform 0.2s ease;
                 -webkit-user-select: none;
             }
@@ -384,7 +386,9 @@
                 cursor: pointer;
                 width: 56px;
                 height: 56px;
-                transition: transform 0.2s ease, box-shadow 0.2s ease,
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease,
                     border-color 0.2s ease;
             }
             .mat-btn img {
@@ -483,7 +487,8 @@
                 height: 100%;
                 border-radius: 28px;
                 background: rgba(255, 255, 255, 0.95);
-                box-shadow: 0 10px 40px rgba(255, 105, 180, 0.15),
+                box-shadow:
+                    0 10px 40px rgba(255, 105, 180, 0.15),
                     inset 0 0 0 3px rgba(255, 182, 193, 0.3);
                 border: 3px solid rgba(255, 182, 193, 0.5);
                 overflow: hidden;
@@ -791,7 +796,9 @@
             }
             .color-swatch.active {
                 border-color: #ff69b4;
-                box-shadow: 0 0 0 2px white, 0 0 0 4px #ff69b4;
+                box-shadow:
+                    0 0 0 2px white,
+                    0 0 0 4px #ff69b4;
             }
             .size-options {
                 display: flex;
@@ -1224,11 +1231,11 @@
                         data[i] = Math.max(0, Math.min(255, data[i] + noise))
                         data[i + 1] = Math.max(
                             0,
-                            Math.min(255, data[i + 1] + noise)
+                            Math.min(255, data[i + 1] + noise),
                         )
                         data[i + 2] = Math.max(
                             0,
-                            Math.min(255, data[i + 2] + noise)
+                            Math.min(255, data[i + 2] + noise),
                         )
                     }
                     bgCtx.putImageData(imageData, 0, 0)
@@ -1265,7 +1272,7 @@
                         0,
                         w / 2,
                         h / 2,
-                        Math.max(w, h) * 0.7
+                        Math.max(w, h) * 0.7,
                     )
                     gradient.addColorStop(0, 'rgba(0,0,0,0)')
                     gradient.addColorStop(1, 'rgba(0,0,0,0.08)')
@@ -1293,12 +1300,12 @@
                     drawBackground()
                     document
                         .querySelectorAll(
-                            '.sidebar-bg-category .mat-btn[data-bg]'
+                            '.sidebar-bg-category .mat-btn[data-bg]',
                         )
                         .forEach((btn) => {
                             btn.classList.toggle(
                                 'active',
-                                btn.dataset.bg === bgKey
+                                btn.dataset.bg === bgKey,
                             )
                         })
                 }
@@ -1433,9 +1440,9 @@
                         el._scale = scale
                         el._rotate = rotate
                         el.style.transform = `translate(${Math.round(
-                            tx
+                            tx,
                         )}px, ${Math.round(
-                            ty
+                            ty,
                         )}px) scale(${scale}) rotate(${rotate}deg)`
                     }
                 }
@@ -1452,11 +1459,11 @@
                     return {
                         x: Math.min(
                             sceneBounds.width - w * 0.3,
-                            Math.max(-w * 0.7, tx)
+                            Math.max(-w * 0.7, tx),
                         ),
                         y: Math.min(
                             sceneBounds.height - h * 0.3,
-                            Math.max(-h * 0.7, ty)
+                            Math.max(-h * 0.7, ty),
                         ),
                     }
                 }
@@ -1476,13 +1483,13 @@
                         w = KID_DISPLAY_MAX_EDGE
                         h = Math.max(
                             1,
-                            Math.round((KID_DISPLAY_MAX_EDGE * nh) / nw)
+                            Math.round((KID_DISPLAY_MAX_EDGE * nh) / nw),
                         )
                     } else {
                         h = KID_DISPLAY_MAX_EDGE
                         w = Math.max(
                             1,
-                            Math.round((KID_DISPLAY_MAX_EDGE * nw) / nh)
+                            Math.round((KID_DISPLAY_MAX_EDGE * nw) / nh),
                         )
                     }
                     div.style.width = w + 'px'
@@ -1494,7 +1501,7 @@
                     type,
                     imgUrl,
                     saveState = true,
-                    onCreated = null
+                    onCreated = null,
                 ) {
                     const div = document.createElement('div')
                     div.className = 'draggable'
@@ -1607,7 +1614,7 @@
                         let maxZ = Z_OTHER_MIN - 1
                         itemsLayer
                             .querySelectorAll(
-                                '.draggable:not([data-type="kid"])'
+                                '.draggable:not([data-type="kid"])',
                             )
                             .forEach((n) => {
                                 let z = parseInt(n.style.zIndex, 10)
@@ -1618,8 +1625,8 @@
                         el.style.zIndex = String(
                             Math.min(
                                 Math.max(maxZ + 1, Z_OTHER_MIN),
-                                Z_KID_MIN - 1
-                            )
+                                Z_KID_MIN - 1,
+                            ),
                         )
                     }
                 }
@@ -1658,7 +1665,7 @@
                 function getDistance(t1, t2) {
                     return Math.hypot(
                         t2.clientX - t1.clientX,
-                        t2.clientY - t1.clientY
+                        t2.clientY - t1.clientY,
                     )
                 }
 
@@ -1666,7 +1673,7 @@
                     return (
                         (Math.atan2(
                             t2.clientY - t1.clientY,
-                            t2.clientX - t1.clientX
+                            t2.clientX - t1.clientX,
                         ) *
                             180) /
                         Math.PI
@@ -1694,7 +1701,7 @@
                         // 单指触摸
                         const el = getItemAtPoint(
                             touches[0].clientX,
-                            touches[0].clientY
+                            touches[0].clientY,
                         )
                         if (el) {
                             if (isLocked(el)) {
@@ -1720,11 +1727,11 @@
                             el =
                                 getItemAtPoint(
                                     touches[0].clientX,
-                                    touches[0].clientY
+                                    touches[0].clientY,
                                 ) ||
                                 getItemAtPoint(
                                     touches[1].clientX,
-                                    touches[1].clientY
+                                    touches[1].clientY,
                                 )
                         }
                         if (el && !isLocked(el)) {
@@ -1737,7 +1744,7 @@
                             pinchCenterY = center.y
                             pinchStartDistance = getDistance(
                                 touches[0],
-                                touches[1]
+                                touches[1],
                             )
                             pinchStartAngle = getAngle(touches[0], touches[1])
                             const { tx, ty, scale, rotate } = getTransform(el)
@@ -1767,7 +1774,7 @@
                         let newScale = pinchStartScale * scaleFactor
                         newScale = Math.min(
                             SCALE_MAX,
-                            Math.max(SCALE_MIN, newScale)
+                            Math.max(SCALE_MIN, newScale),
                         )
 
                         let angleDiff = curAngle - pinchStartAngle
@@ -1787,7 +1794,7 @@
                             pos.x,
                             pos.y,
                             newScale,
-                            newRotate
+                            newRotate,
                         )
 
                         e.preventDefault()
@@ -1805,7 +1812,7 @@
                             pos.x,
                             pos.y,
                             dragStartScale,
-                            dragStartRotate
+                            dragStartRotate,
                         )
                         e.preventDefault()
                     }
@@ -1898,7 +1905,7 @@
                             pos.x,
                             pos.y,
                             mouseStartScale,
-                            mouseStartRotate
+                            mouseStartRotate,
                         )
                     }
                 })
@@ -1924,7 +1931,7 @@
                     let newScale = scale * delta
                     newScale = Math.min(
                         SCALE_MAX,
-                        Math.max(SCALE_MIN, newScale)
+                        Math.max(SCALE_MIN, newScale),
                     )
                     setTransform(currentSelected, tx, ty, newScale, rotate)
                 }
@@ -2169,7 +2176,7 @@
                                 0,
                                 0,
                                 drawCanvas.width,
-                                drawCanvas.height
+                                drawCanvas.height,
                             )
                         }
                         canvasImg.src = currentState.canvas
@@ -2224,14 +2231,14 @@
                                     item.tx,
                                     item.ty,
                                     item.scale,
-                                    item.rotate
+                                    item.rotate,
                                 )
                                 div.style.zIndex =
                                     item.zIndex != null && item.zIndex !== ''
                                         ? item.zIndex
                                         : item.type === 'kid'
-                                        ? String(Z_KID_MIN)
-                                        : String(Z_OTHER_MIN)
+                                          ? String(Z_KID_MIN)
+                                          : String(Z_OTHER_MIN)
                             }
                             img.onerror = function () {
                                 // 图片加载失败时也尝试恢复位置
@@ -2250,14 +2257,14 @@
                                     item.tx,
                                     item.ty,
                                     item.scale,
-                                    item.rotate
+                                    item.rotate,
                                 )
                                 div.style.zIndex =
                                     item.zIndex != null && item.zIndex !== ''
                                         ? item.zIndex
                                         : item.type === 'kid'
-                                        ? String(Z_KID_MIN)
-                                        : String(Z_OTHER_MIN)
+                                          ? String(Z_KID_MIN)
+                                          : String(Z_OTHER_MIN)
                             }
                         })
                     }
@@ -2265,7 +2272,7 @@
                 /** 与 saveImage / 预览共用：把物品画进与 bgCanvas 同尺寸的位图坐标系 */
                 function drawDraggablesToCanvas(ctx, layer) {
                     const list = Array.prototype.slice.call(
-                        layer.querySelectorAll('.draggable')
+                        layer.querySelectorAll('.draggable'),
                     )
                     list.sort(function (a, b) {
                         const za = parseInt(a.style.zIndex, 10)
@@ -2304,7 +2311,7 @@
                             -dw / 2,
                             -dh / 2,
                             dw,
-                            dh
+                            dh,
                         )
                         ctx.restore()
                     })
@@ -2349,7 +2356,7 @@
                         0,
                         0,
                         outW,
-                        outH
+                        outH,
                     )
                     drawDraggablesToCanvas(ctx, kidsLayer)
                 }
@@ -2365,7 +2372,7 @@
                     compositeSceneToContext(
                         offCanvas.getContext('2d'),
                         outW,
-                        outH
+                        outH,
                     )
 
                     const fileName = '小人国大世界.png'
@@ -2551,7 +2558,7 @@
                     } catch (e) {
                         alert(
                             '无法使用麦克风，请允许权限后重试。错误：' +
-                                (e && e.message ? e.message : String(e))
+                                (e && e.message ? e.message : String(e)),
                         )
                         return
                     }
@@ -2569,7 +2576,7 @@
                         stopTracks(micStream)
                         alert(
                             '无法从画布捕获视频流。错误：' +
-                                (e && e.message ? e.message : String(e))
+                                (e && e.message ? e.message : String(e)),
                         )
                         return
                     }
@@ -2590,7 +2597,7 @@
                         stopTracks(videoStream)
                         alert(
                             '无法创建录制器。错误：' +
-                                (e && e.message ? e.message : String(e))
+                                (e && e.message ? e.message : String(e)),
                         )
                         return
                     }
@@ -2619,7 +2626,7 @@
                         mediaRecorder = null
                         alert(
                             '开始录制失败：' +
-                                (e && e.message ? e.message : String(e))
+                                (e && e.message ? e.message : String(e)),
                         )
                         return
                     }
@@ -2726,7 +2733,7 @@
 
                 // 存储分类展开状态（与 itemsConfig 同步，默认全部展开）
                 const categoryExpanded = Object.fromEntries(
-                    Object.keys(itemsConfig).map((k) => [k, true])
+                    Object.keys(itemsConfig).map((k) => [k, true]),
                 )
 
                 const thumbImageCache = Object.create(null)
@@ -2748,7 +2755,7 @@
                     if (thumbImageCache[url]) return thumbImageCache[url]
                     thumbImageCache[url] = new Promise(function (
                         resolve,
-                        reject
+                        reject,
                     ) {
                         function start() {
                             thumbLoadsActive++
@@ -2803,7 +2810,7 @@
                                 root: root,
                                 rootMargin: '120px 0px',
                                 threshold: 0.01,
-                            }
+                            },
                         )
                     }
                     sidebarThumbObserver.observe(img)
@@ -2834,7 +2841,7 @@
                     container.innerHTML = ''
 
                     for (const [category, data] of Object.entries(
-                        itemsConfig
+                        itemsConfig,
                     )) {
                         const categoryDiv = document.createElement('div')
                         categoryDiv.className = 'category'
@@ -2861,7 +2868,7 @@
 
                         // 渲染物品按钮
                         for (const [type, itemData] of Object.entries(
-                            data.items
+                            data.items,
                         )) {
                             const btn = document.createElement('button')
                             btn.className = 'mat-btn'
@@ -2961,7 +2968,7 @@
 
                     // 定位在点击的物品按钮旁边（带边界检测）
                     const btn = document.querySelector(
-                        `.mat-btn[data-type="${type}"]`
+                        `.mat-btn[data-type="${type}"]`,
                     )
                     if (btn) {
                         const rect = btn.getBoundingClientRect()
@@ -2993,7 +3000,7 @@
                     setTimeout(() => {
                         document.addEventListener(
                             'click',
-                            hideVariantsOnClickOutside
+                            hideVariantsOnClickOutside,
                         )
                     }, 10)
                 }
@@ -3005,7 +3012,7 @@
                     expandedVariant = null
                     document.removeEventListener(
                         'click',
-                        hideVariantsOnClickOutside
+                        hideVariantsOnClickOutside,
                     )
                 }
 
@@ -3043,7 +3050,7 @@
                     const newItem = createDraggable(
                         dragType,
                         variant.img,
-                        variantIndex
+                        variantIndex,
                     )
                     const { w, h } = getSceneLayoutCssSize()
                     const pos = clampPosition(newItem, w / 2 - 45, h / 2 - 45)
@@ -3158,7 +3165,7 @@
                     })
                     scene.addEventListener(
                         'mouseleave',
-                        () => (cursorDiv.style.display = 'none')
+                        () => (cursorDiv.style.display = 'none'),
                     )
 
                     const bgCategoryTitle =
@@ -3186,10 +3193,10 @@
                 }
 
                 document.addEventListener('gesturestart', (e) =>
-                    e.preventDefault()
+                    e.preventDefault(),
                 )
                 document.addEventListener('gesturechange', (e) =>
-                    e.preventDefault()
+                    e.preventDefault(),
                 )
             })()
         </script>
