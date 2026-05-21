@@ -59,7 +59,7 @@
     "injectJq": false,
     "tauriApi": true,
     "buildMethod": "local",
-    "debug": true,
+    "debug": false,
     "pageTitle": true,
     "author": "pakeplus",
     "startMethod": "none",
@@ -76,5 +76,5 @@
     "pwdStyle": "flat",
     "pwdTheme": "dark",
     "autoStart": false,
-    "cors": true
+    "cors": false
 }
